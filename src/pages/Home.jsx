@@ -2,6 +2,7 @@ import { AboutMeContent, SkillSummary } from "../components/pages/About";
 import { Languages } from "../components/pages/Languages";
 import { Project } from "../components/pages/Projects";
 import { Contacts } from "../components/pages/Contacts";
+import profile from "../../public/profile.jpg"
 
 export function Home() {
   return (
@@ -19,7 +20,7 @@ export function Home() {
                   
           <div className="profile-container h-[18rem] w-[18rem] flex items-center justify-center shadow-md shadow-green-500 rounded-full text-[var(--tertiary)] p-1 relative">
             <img
-              src="/profile.jpg"
+              src={profile}
               alt="Profile"
               className="h-full w-full rounded-full object-cover max-w-[16rem] max-h-[16rem]"
             />
