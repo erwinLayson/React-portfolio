@@ -11,7 +11,7 @@ export function Project() {
           <article key={index} className="flex flex-col p-5 shadow-lg shadow-green-500 rounded-lg gap-7 relative">
             <p className="text-xl font-bold flex flex-col md:flex-row gap-4">Project Title: <span className="text-lg font-semibold">{ project.projectTitle } </span></p>
             <div className="card flex flex-col md:flex-row gap-5">
-              <img src={project.image} alt="project Images" className="rounded-lg max-w-200"/>
+              <img src={project.image} alt="project Images" className="rounded-lg max-w-[100%] md:max-w-[60%]"/>
               
               <article className="flex flex-col rounded-lg gap-10">
                 <p className="text-lg italic p-5 rounded-lg shadow-lg shadow-green-500 w-full flex justify-center items-center">

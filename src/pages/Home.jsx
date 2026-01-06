@@ -28,20 +28,20 @@ export function Home() {
         </div>
       </div>
 
-      <div id="aboutMe" className="min-h-screen min-w-screen bg-[var(--primary)] p-12 gap-10 text-[var(--tertiary)]">
+      <div id="aboutMe" className="min-h-screen min-w-screen bg-[var(--primary)] p-2 md:p-10 gap-10 text-[var(--tertiary)]">
         <section className="flex flex-col gap-10 shadow-lg shadow-green-500 p-5 rounded-lg">
           <AboutMeContent />
           <SkillSummary />
         </section>
       </div>
 
-      <div id="languages" className="min-h-full min-w-screen p-10 bg-[var(--primary)] text-[var(--tertiary)]">
+      <div id="languages" className="min-h-full min-w-screen p-2 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
         <section className="flex flex-col shadow-lg shadow-green-500 p-5 rounded-lg gap-10">
           <Languages/>
         </section>
       </div>
 
-      <div id="projects" className="min-h-screen min-w-screen p-10 bg-[var(--primary)] text-[var(--tertiary)]">
+      <div id="projects" className="min-h-screen min-w-screen p-2 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
         <Project />
       </div>
       <Contacts/>
