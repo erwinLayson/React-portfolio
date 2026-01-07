@@ -6,7 +6,7 @@ export const Projects = [
     image: osas,
     description: "I developed a full-stack Scholarship Application and Management System where students can apply online, and administrators can review applications, manage requirements, and track student status and GWA. The system was built using React, Node.js, Express.js, RESTful APIs, JWT authentication, and MySQL (via XAMPP). This project was created for academic purposes and is intended for use by the SKSU OSAS organization.",
     codeLink: "https://github.com/erwinLayson/OSAS-Scholarship-information-System",
-    siteLink: "#"
+    siteLink: "https://erwinlayson.github.io/Scholarship-Application-and-Management-System/#/home"
   },
   
   {
