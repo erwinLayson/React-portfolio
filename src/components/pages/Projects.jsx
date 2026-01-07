@@ -19,10 +19,10 @@ export function Project() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-5 rounded-lg shadow-lg shadow-green-500 list-none p-5 justify-evenly items-center relative w-full">
-                  <li className="bg-green-500 w-full text-center text-lg rounded-lg hover:shadow-green-500 shadow-md p-2 w-full">
+                  <li className="bg-green-500 w-full text-center text-lg rounded-lg hover:shadow-green-500 active:shadow-green-500 shadow-md p-2 w-full">
                     <a href={ project.codeLink } className="w-full">View Code</a>
                   </li>
-                  <li className="bg-blue-500 w-full text-center text-lg rounded-lg hover:shadow-blue-500 shadow-md p-2">
+                  <li className="bg-blue-500 w-full text-center text-lg rounded-lg hover:shadow-blue-500 active:shadow-blue-500 shadow-md p-2">
                     <a href={ project.siteLink }>View Site</a>
                   </li>
                 </div>

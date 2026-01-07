@@ -15,12 +15,12 @@ return (
             Personal Portfolio
         </h1>
 
-      <button className="block sm:hidden hover:shadow-green-500 shadow-lg rounded-lg p-2 cursor-pointer" onClick={() => setNavIsopen((prev) => !prev)}>
+      <button className="block sm:hidden hover:shadow-green-500 active:shadow-green-500 shadow-lg rounded-lg p-2 cursor-pointer" onClick={() => setNavIsopen((prev) => !prev)}>
             {navIsOpen ? <XMarkIcon className="h-8 w-8 text-white"/> : <Bars3Icon className="h-8 w-8 text-white"/>}
       </button>
 
       <ul className={`hidden sm:flex w-[12rem gap-[1rem] list-none justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3`}>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
             <Link
                 to={"home"}
                 duration={1500}
@@ -28,7 +28,7 @@ return (
                 className="cursor-pointer"
             >Home</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
             <Link
                 to={"aboutMe"}
                 duration={1500}
@@ -36,7 +36,7 @@ return (
                 className="cursor-pointer"
             >About</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
           <Link
             to={'languages'}
             duration={1500}
@@ -44,7 +44,7 @@ return (
             className="cursor-pointer"                            
           >Language</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
             <Link
               to={"projects"}
               duration={1500}
@@ -52,7 +52,7 @@ return (
               className="cursor-pointer"
             >Projects</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
           <Link
             to={"contacts"}
             duration={1500}
@@ -64,7 +64,7 @@ return (
     </header>
 
       <ul className={`${navIsOpen ? "flex" : "hidden"} sm:hidden w-[12rem] flex-col gap-[1rem] list-none fixed justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3 shadow-lg shadow-green-500 z-10`}>
-          <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+          <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
             <Link
                 to={"home"}
                 duration={1500}
@@ -72,7 +72,7 @@ return (
                 className="cursor-pointer"
             >Home</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
             <Link
                 to={"aboutMe"}
                 duration={1500}
@@ -80,7 +80,7 @@ return (
                 className="cursor-pointer"
             >About</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
           <Link
             to={'languages'}
             duration={1500}
@@ -88,7 +88,7 @@ return (
             className="cursor-pointer"                            
           >Language</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
             <Link
               to={"projects"}
               duration={1500}
@@ -96,7 +96,7 @@ return (
               className="cursor-pointer"
             >Projects</Link>
         </li>
-        <li className="hover:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
           <Link
             to={"contacts"}
             duration={1500}
