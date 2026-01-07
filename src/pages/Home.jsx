@@ -15,7 +15,9 @@ export function Home() {
                 __Hi I'm Erwin B. Layson
               </h1>
             </div>
-            <p className="sm:text-lg">Aspiring fullstack Web Developer</p>
+            <p className="sm:text-lg px-10 w-full text-center ">
+              Aspiring fullstack Web Developer, who are passionate to create a responsive UI design and Secured Website
+            </p>
           </div>
                   
           <div className="profile-container h-[18rem] w-[18rem] flex items-center justify-center shadow-md shadow-green-500 rounded-full text-[var(--tertiary)] p-1 relative">
