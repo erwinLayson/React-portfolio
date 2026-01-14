@@ -8,6 +8,14 @@ import { ROUTES } from "../constant/rotues";
 export function Navbar() {
   const [navIsOpen, setNavIsopen] = useState(false);
 
+  const sidebar = [
+    {route: "home", label: "Home"},
+    {route: "aboutMe", label: "About Me"},
+    {route: "languages", label: "Language"},
+    {route: "projects", label: "My Projects"},
+    {route: "contacts", label: "Contacts"}
+  ]
+
   function OpenNavbar({link, duration, Label}) {
     return (
       <>
@@ -17,7 +25,7 @@ export function Navbar() {
           smooth={true}
           onClick={() => (
           setNavIsopen(false)
-        )} className="cursor-pointer hover:shadow-green-500  active:shadow-green-500 shadow-lg">{Label}</Link>
+        )} className="cursor-pointer hover:shadow-green-500 active:shadow-green-500 shadow-lg w-full rounded-lg p-2 text-center">{Label}</Link>
       </>
     )
   }
@@ -34,85 +42,29 @@ return (
       </button>
 
       <ul className={`hidden sm:flex w-[12rem gap-[1rem] list-none justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3`}>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <Link
-                to={"home"}
-                duration={1500}
-                smooth={true}
-                className="cursor-pointer"
-            >Home</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
-            <Link
-                to={"aboutMe"}
-                duration={1500}
-                smooth={true}
-                className="cursor-pointer"
-            >About</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <Link
-            to={'languages'}
-            duration={1500}
-            smooth={true}
-            className="cursor-pointer"                            
-          >Language</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-            <Link
-              to={"projects"}
+        {sidebar.map((data, index) => (
+          <li key={index}>
+            <OpenNavbar
+              link={data.route}
               duration={1500}
-              smooth={true}
-              className="cursor-pointer"
-            >Projects</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <Link
-            to={"contacts"}
-            duration={1500}
-            smooth={true}
-            className="cursor-pointer"
-          >Contacts</Link>
-        </li>
+              Label={data.label}
+            />
+          </li>
+        ))}
       </ul>
     </header>
 
       <ul className={`${navIsOpen ? "flex" : "hidden"} sm:hidden w-[12rem] flex-col gap-[1rem] list-none fixed justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3 shadow-lg shadow-green-500 z-10`}>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+        
+      {sidebar.map((sidebarLinks, index) => (
+        <li key={index} className="flex justify-center items-center w-full">
           <OpenNavbar
-            link={"home"}
+            link={sidebarLinks.route}
             duration={1500}
-            Label={"Home"}
+            Label={sidebarLinks.label}
           />
         </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
-            <OpenNavbar
-              link={"aboutMe"}
-              duration={1500}
-              Label={"Aboute Me"}
-            />
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <OpenNavbar
-            link={"languages"}
-            duration={1500}
-            Label={"Languages"}
-          />
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-            <OpenNavbar
-              link={"projects"}
-              duration={1500}
-              Label={"My Projects"}
-            />
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-           <OpenNavbar
-            link={"contacts"}
-            duration={1500}
-            Label={"Contact Me"}
-          />
-        </li>
+      ))}
       </ul>
   </>
   )
