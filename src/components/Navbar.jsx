@@ -6,7 +6,21 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { ROUTES } from "../constant/rotues";
 
 export function Navbar() {
-    const [navIsOpen, setNavIsopen] = useState(false);
+  const [navIsOpen, setNavIsopen] = useState(false);
+
+  function OpenNavbar({link, duration, Label}) {
+    return (
+      <>
+        <Link
+          to={`${link}`}
+          duration={duration}
+          smooth={true}
+          onClick={() => (
+          setNavIsopen(false)
+        )} className="cursor-pointer hover:shadow-green-500  active:shadow-green-500 shadow-lg">{Label}</Link>
+      </>
+    )
+  }
 
 return (
   <>
@@ -21,7 +35,7 @@ return (
 
       <ul className={`hidden sm:flex w-[12rem gap-[1rem] list-none justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3`}>
         <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-            <Link
+          <Link
                 to={"home"}
                 duration={1500}
                 smooth={true}
@@ -64,45 +78,40 @@ return (
     </header>
 
       <ul className={`${navIsOpen ? "flex" : "hidden"} sm:hidden w-[12rem] flex-col gap-[1rem] list-none fixed justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3 shadow-lg shadow-green-500 z-10`}>
-          <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-            <Link
-                to={"home"}
-                duration={1500}
-                smooth={true}
-                className="cursor-pointer"
-            >Home</Link>
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+          <OpenNavbar
+            link={"home"}
+            duration={1500}
+            Label={"Home"}
+          />
         </li>
         <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2" >
-            <Link
-                to={"aboutMe"}
-                duration={1500}
-                smooth={true}
-                className="cursor-pointer"
-            >About</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <Link
-            to={'languages'}
-            duration={1500}
-            smooth={true}
-            className="cursor-pointer"                            
-          >Language</Link>
-        </li>
-        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-            <Link
-              to={"projects"}
+            <OpenNavbar
+              link={"aboutMe"}
               duration={1500}
-              smooth={true}
-              className="cursor-pointer"
-            >Projects</Link>
+              Label={"Aboute Me"}
+            />
         </li>
         <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
-          <Link
-            to={"contacts"}
+          <OpenNavbar
+            link={"languages"}
             duration={1500}
-            smooth={true}
-            className="cursor-pointer"
-          >Contacts</Link>
+            Label={"Languages"}
+          />
+        </li>
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+            <OpenNavbar
+              link={"projects"}
+              duration={1500}
+              Label={"My Projects"}
+            />
+        </li>
+        <li className="hover:shadow-green-500 active:shadow-green-500 rounded-md shadow-md w-full text-center p-2">
+           <OpenNavbar
+            link={"contacts"}
+            duration={1500}
+            Label={"Contact Me"}
+          />
         </li>
       </ul>
   </>
