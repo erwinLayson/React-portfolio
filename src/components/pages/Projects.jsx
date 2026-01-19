@@ -1,5 +1,7 @@
 import { Projects } from "../../data/projectData"
 
+import "../style/projects.css"
+
 
 export function Project() {
   return (
@@ -14,7 +16,7 @@ export function Project() {
               <img src={project.image} alt="project Images" className="rounded-lg max-w-[100%] md:max-w-[60%]"/>
               
               <article className="flex flex-col rounded-lg gap-10">
-                <p className="text-lg italic p-5 rounded-lg shadow-lg shadow-green-500 w-full flex justify-center items-center">
+                <p className="project-description text-lg italic max-h-[20rem] overflow-y-auto p-5 rounded-lg shadow-lg shadow-green-500 w-full">
                   { project.description }
                 </p>
 
