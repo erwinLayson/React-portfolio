@@ -5,7 +5,7 @@ function App() {
   return (
     <>  
       <Navbar />
-      <main className="min-w-screen">
+      <main className="w-screen">
         <Home />
       </main>
     </>

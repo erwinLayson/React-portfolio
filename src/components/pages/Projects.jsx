@@ -6,7 +6,7 @@ import "../style/projects.css"
 export function Project() {
   return (
     <>
-      <section className="flex flex-col shadow-lg shadow-green-500 p-5 rounded-lg gap-10">
+      <section className="flex flex-col p-5 rounded-lg gap-10">
         <h1 className="text-3xl text-shadow w-full sm:text-start text-center font-bold">Projects</h1>
 
         {Projects.map((project, index) => (
@@ -21,11 +21,11 @@ export function Project() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-5 rounded-lg shadow-lg shadow-green-500 list-none p-5 justify-evenly items-center relative w-full">
-                  <li className="bg-green-500 w-full text-center text-lg rounded-lg hover:shadow-green-500 active:shadow-green-500 shadow-md p-2 w-full">
-                    <a href={ project.codeLink } className="w-full">View Code</a>
+                  <li className="flex w-full">
+                    <a href={ project.codeLink } className="w-full text-center rounded-lg p-2 cursor-pointer bg-green-500 hover:bg-green-500/80 transition">View Code</a>
                   </li>
-                  <li className="bg-blue-500 w-full text-center text-lg rounded-lg hover:shadow-blue-500 active:shadow-blue-500 shadow-md p-2">
-                    <a href={ project.siteLink }>View Site</a>
+                  <li className="flex items-center justify-center w-full">
+                    <a href={ project.siteLink } className="w-full text-center cursor-pointer bg-blue-500 rounded-lg p-2 hover:bg-blue-500/80 transition text-lg">View Site</a>
                   </li>
                 </div>
               </article>

@@ -14,8 +14,8 @@ function PersonalAccount({ accountName, links, btnLabel, index}) {
 export function Contacts() {
   return (
     <>
-      <div id="contacts" className="min-h-screen min-w-screen p-2 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
-        <section className="flex flex-col gap-10 p-5 shadow-lg shadow-green-500 rounded-lg">
+      <div id="contacts" className="min-h-screen w-full p-2 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
+        <section className="flex flex-col gap-10 p-5 rounded-lg">
           <h1 className="font-bold text-3xl text-shadow w-full text-center md:text-start">Contact Me</h1>
           <article>
             <div className="p-5 rounded-lg shadow-green-500 shadow-lg font-bold">

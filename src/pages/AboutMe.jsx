@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar"
 import { AboutMeContent, SkillSummary } from "../components/pages/About"
 
 export function AboutMe() {

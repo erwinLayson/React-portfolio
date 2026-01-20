@@ -37,11 +37,11 @@ return (
             Personal Portfolio
         </h1>
 
-      <button className="block sm:hidden hover:shadow-green-500 active:shadow-green-500 shadow-lg rounded-lg p-2 cursor-pointer" onClick={() => setNavIsopen((prev) => !prev)}>
+      <button className="block md:hidden hover:shadow-green-500 active:shadow-green-500 shadow-lg rounded-lg p-2 cursor-pointer" onClick={() => setNavIsopen((prev) => !prev)}>
             {navIsOpen ? <XMarkIcon className="h-8 w-8 text-white"/> : <Bars3Icon className="h-8 w-8 text-white"/>}
       </button>
 
-      <ul className={`hidden sm:flex w-[12rem gap-[1rem] list-none justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3`}>
+      <ul className={`hidden md:flex w-[12rem gap-[1rem] list-none justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3`}>
         {sidebar.map((data, index) => (
           <li key={index}>
             <OpenNavbar
@@ -54,7 +54,7 @@ return (
       </ul>
     </header>
 
-      <ul className={`${navIsOpen ? "flex" : "hidden"} sm:hidden w-[12rem] flex-col gap-[1rem] list-none fixed justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3 shadow-lg shadow-green-500 z-10`}>
+      <ul className={`${navIsOpen ? "flex" : "hidden"} md:hidden w-[12rem] flex-col gap-[1rem] list-none fixed justify-center items-center bg-[var(--primary)] text-white right-5 top-[5rem] rounded-lg p-3 shadow-lg shadow-green-500 z-10`}>
         
       {sidebar.map((sidebarLinks, index) => (
         <li key={index} className="flex justify-center items-center w-full">

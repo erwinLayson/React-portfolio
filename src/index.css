@@ -10,12 +10,15 @@
 .transition {
   transition: .3s ease;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 body {
   padding: 0;
   margin: 0;
   width: 100%;
   position: relative;
+  scrollbar-width: none;
 }
 .text-shadow {
   text-shadow: 5px 5px 10px var(--secondary);
