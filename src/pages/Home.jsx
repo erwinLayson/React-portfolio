@@ -9,14 +9,14 @@ export function Home() {
     <>
       <div id="home" className="min-h-screen w-screen bg-[var(--primary)] flex flex-col items-center justify-center sm:justify-around">
         <div className="flex flex-col-reverse md:flex-row items-center justify-evenly text-white w-full gap-6">
-          <div className="flex flex-col gap-5 justify-center items-center shadow-lg text-[var(--tertiary)]">
+          <div className="flex flex-col gap-5 justify-center items-center text-[var(--tertiary)]">
             <div className="block">
               <h1 className="text-2xl sm:text-4xl font-semibold text-[var(--tertiary)] shadow-lg text-shadow">
                 __Hi I'm Erwin B. Layson
               </h1>
             </div>
             <p className="sm:text-lg px-10 w-full text-center ">
-              Aspiring fullstack Web Developer, who are passionate to create a responsive UI design and Secured Website
+              Aspiring fullstack Web Developer, who are passionate to create a responsive and Secured Website
             </p>
           </div>
                   

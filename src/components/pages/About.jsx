@@ -17,21 +17,21 @@ export function AboutMeContent() {
         <section className="flex gap-10 flex-col text-[var(--tertiary)]">
             <h1 className="text-3xl font-bold text-shadow w-full text-center sm:text-start">About Me</h1>
 
-            <div className="flex flex-col gap-5 shadow-lg shadow-green-500 p-5 rounded-lg">
+            <div className="aboutMeSection max-h-screen overflow-y-auto flex flex-col gap-5 shadow-lg shadow-green-500 p-5 rounded-lg">
                <p>
-                  I am <b>Erwin B. Layson</b> an BSIT Student with hands-on experience in building full stack web applications for academic and real world use. I have developed a full stack <b>Scholarship Application And Management System</b> where I handle both frontend and backend developments, including <b>Authentication, API integration, Database design, and Responsive user Interface</b>.
+                  Hi, I’m Erwin B. Layson, a BSIT student who enjoys building full-stack web applications and learning how things work behind the scenes..
                </p>
 
                <p>
-                  I work with <b>react(Vite)</b> for Frontend development, <b>css, and tailwind</b> for Styling, and Node.JS with express for the backend development. I am familiar with building <b>RESTful APIs, implenting JWT-based Authentication, cookies, routing, and connecting applications to Databses</b>
+                  I’m a curious and patient learner who likes solving problems, especially when it comes to debugging and improving user experience. I enjoy turning ideas into working systems and take satisfaction in writing clean, organized, and readable code. When something doesn’t work, I see it as a challenge to learn rather than a setback.
                </p>
 
                <p>
-                  In Addition to my academics projects. I Have <b>freelance experience creating paid school related web systems</b> for my classmate, students from other sections, and students from other schools. these projets helped me strengthen my problem solving skills, Understand client requirements, and deliver functional systems within academic deadlines
+                  I primarily work with React (Vite) for frontend development, CSS and Tailwind CSS for styling, and Node.js with Express for backend development. I’m comfortable building RESTful APIs, implementing JWT-based authentication, handling cookies and routing, and connecting applications to databases.
                </p>
 
                <p>
-                  Rather than memoriezing every features of the language or framework, I focus on Understanding the core concept, writting clean code, and learning new technologies as needed. I am continuously improving my skills through hands-on and AI assisted project and real-world experience while completing studies.
+                  Alongside my academic projects, I’ve worked on freelance, school-related web systems for classmates and students from other sections and schools. These experiences helped me improve my communication skills, understand real user needs, and deliver functional solutions within academic deadlines.
                </p>
             </div>
         </section>

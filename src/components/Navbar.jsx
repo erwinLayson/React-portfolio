@@ -46,7 +46,7 @@ return (
           <li key={index}>
             <OpenNavbar
               link={data.route}
-              duration={1500}
+              duration={1000}
               Label={data.label}
             />
           </li>

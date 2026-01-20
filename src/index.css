@@ -2,9 +2,13 @@
 
 
 :root {
-    --primary: #000000e3;
-    --secondary: rgba(13, 198, 13, 0.865);
-    --tertiary: #ffff;
+  --primary: #000000e3;
+  --secondary: rgba(13, 198, 13, 0.865);
+  --tertiary: #ffff;
+}
+
+.transition {
+  transition: .3s ease;
 }
 
 body {

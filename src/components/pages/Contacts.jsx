@@ -1,3 +1,16 @@
+import contacts from "../../data/contactData";
+
+function PersonalAccount({ accountName, links, btnLabel, index}) {
+  return (
+    <li key={index} className="flex flex-col sm:flex-row gap-5 justify-between items-center w-full">
+      <p className="font-semibold sm:text-lg text-shadow w-full text-center lg:text-start">{ accountName }</p>
+      <a href={`${links}`} className="p-3 bg-blue-500 rounded-lg font-semibold w-full text-center hover:bg-blue-500/80 transition">{ btnLabel }</a>
+    </li>
+  )
+}
+
+
+
 export function Contacts() {
   return (
     <>
@@ -27,18 +40,14 @@ export function Contacts() {
           <article className="p-5 shadow-lg shadow-green-500 rounded-lg flex flex-col gap-10">
             <h1 className="text-3xl text-shadow font-bold w-full text-center md:text-start">Personal Account</h1>
             <ul className="flex flex-col gap-10 p-5 shadow-lg shadow-green-500 rounded-lg">
-              <li className="flex flex-col sm:flex-row gap-5 justify-between items-center w-full">
-                <p className="font-semibold sm:text-lg text-shadow">Erwin B. Layson</p>
-                <a href="https://www.facebook.com/warsak.busdak" className="p-3 bg-blue-500 rounded-lg font-semibold">Visit FB</a>
-              </li>
-              <li className="flex flex-col sm:flex-row gap-5 justify-between items-center w-full">
-                <p className="font-semibold sm:text-lg text-shadow">laysonerwin28@gmail.com</p>
-                <a href="" className="p-3 bg-blue-500 rounded-lg font-semibold">Visit Gmail</a>
-              </li>
-              <li className="flex flex-col sm:flex-row gap-5 justify-between items-center w-full">
-                <p className="font-semibold sm:text-lg text-shadow">Erwin Layson</p>
-                <a href="https://github.com/erwinLayson" className="p-3 bg-blue-500 rounded-lg font-semibold">Visit GitHub</a>
-              </li>
+              {contacts.map((contactInfo, index) => (
+                <PersonalAccount
+                  accountName={contactInfo.accName}
+                  links={contactInfo.links}
+                  btnLabel={contactInfo.btnLabel}
+                  key={index}
+                />
+              ))}
             </ul>
           </article>
         </section>
