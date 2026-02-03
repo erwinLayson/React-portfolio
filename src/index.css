@@ -1,25 +1,147 @@
 @import "tailwindcss";
 
-
 :root {
-  --primary: #000000e3;
+  --primary: #0a0a0a;
+  --primary-dark: #050505;
   --secondary: rgba(13, 198, 13, 0.865);
-  --tertiary: #ffff;
+  --tertiary: #ffffff;
+  
+  /* Enhanced green palette */
+  --glow-green: rgba(13, 202, 13, 0.6);
+  --glow-green-soft: rgba(13, 202, 13, 0.3);
+  --glow-green-intense: rgba(13, 202, 13, 0.8);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(10, 10, 10, 0.6);
+  --glass-bg-light: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(13, 202, 13, 0.2);
+  --glass-border-hover: rgba(13, 202, 13, 0.5);
+  
+  /* Fonts */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
-.transition {
-  transition: .3s ease;
+* {
+  box-sizing: border-box;
 }
-::-webkit-scrollbar{
-  display: none;
+
+html {
+  scroll-behavior: smooth;
 }
+
 body {
   padding: 0;
   margin: 0;
   width: 100%;
   position: relative;
   scrollbar-width: none;
+  font-family: var(--font-body);
+  background: var(--primary);
+  color: var(--tertiary);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text shadow utility */
 .text-shadow {
-  text-shadow: 5px 5px 10px var(--secondary);
+  text-shadow: 0 0 20px var(--glow-green-soft), 0 0 40px var(--glow-green-soft);
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 0 30px var(--glow-green-soft), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effect for images */
+.glow-image {
+  box-shadow: 0 0 30px var(--glow-green-soft), 0 0 60px var(--glow-green-soft);
+}
+
+/* Pulse animation for profile */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--glow-green-soft), 0 0 40px var(--glow-green-soft);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--glow-green), 0 0 60px var(--glow-green);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0dca0d 0%, #00ff88 50%, #0dca0d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--glow-green), transparent);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-pulse-glow,
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Smooth transitions */
+.transition-default {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

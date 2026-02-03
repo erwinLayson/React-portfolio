@@ -1,57 +1,153 @@
-import contacts from "../../data/contactData";
+import { motion } from "framer-motion";
+import { FaFacebook, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
 
-function PersonalAccount({ accountName, links, btnLabel, index}) {
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: FaFacebook,
+    link: "https://www.facebook.com/warsak.busdak",
+    color: "from-blue-600 to-blue-400",
+    hoverColor: "hover:border-blue-500/50",
+  },
+  {
+    name: "Gmail",
+    icon: FaEnvelope,
+    link: "mailto:lasyonerwin28@gmail.com",
+    color: "from-red-500 to-orange-400",
+    hoverColor: "hover:border-red-500/50",
+  },
+  {
+    name: "GitHub",
+    icon: FaGithub,
+    link: "https://github.com/erwinLayson",
+    color: "from-gray-600 to-gray-400",
+    hoverColor: "hover:border-gray-400/50",
+  },
+];
+
+function SocialCard({ social, index }) {
+  const prefersReducedMotion = useReducedMotion();
+  const Icon = social.icon;
+
   return (
-    <li key={index} className="flex flex-col sm:flex-row gap-5 justify-between items-center w-full">
-      <p className="font-semibold sm:text-lg text-shadow w-full text-center lg:text-start">{ accountName }</p>
-      <a href={`${links}`} className="p-3 bg-blue-500 rounded-lg font-semibold w-full text-center hover:bg-blue-500/80 transition">{ btnLabel }</a>
-    </li>
-  )
+    <motion.a
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`glass-card p-6 flex items-center gap-4 group ${social.hoverColor} transition-all duration-300`}
+      initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      whileHover={prefersReducedMotion ? {} : { y: -5, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className={`p-4 rounded-xl bg-gradient-to-br ${social.color} group-hover:shadow-lg transition-shadow`}>
+        <Icon className="w-6 h-6 text-white" />
+      </div>
+      <div className="flex-1">
+        <p className="font-semibold text-lg text-white group-hover:text-green-400 transition-colors">
+          {social.name}
+        </p>
+        <p className="text-sm text-gray-400">Click to connect</p>
+      </div>
+      <motion.span
+        className="text-green-400 opacity-0 group-hover:opacity-100 transition-opacity"
+        initial={{ x: -10 }}
+        whileHover={{ x: 0 }}
+      >
+        →
+      </motion.span>
+    </motion.a>
+  );
 }
 
-
-
 export function Contacts() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <>
-      <div id="contacts" className="min-h-screen w-full p-2 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
-        <section className="flex flex-col gap-10 p-5 rounded-lg">
-          <h1 className="font-bold text-3xl text-shadow w-full text-center md:text-start">Contact Me</h1>
-          <article>
-            <div className="p-5 rounded-lg shadow-green-500 shadow-lg font-bold">
-              <form action="" className="flex flex-col gap-5">
-                <div className="flex flex-col gap-5 text-lg">
-                  <label htmlFor="senderEmail">Enter your email</label>
-                  <input type="text" id="senderEmail" className="bg-white text-black rounded-lg p-2 focus:outline-green-500 border-none font-semibold"/>
+    <div id="contacts" className="min-h-screen w-full p-4 md:p-10 bg-[var(--primary)] text-[var(--tertiary)]">
+      <div className="max-w-6xl mx-auto">
+        <section className="flex flex-col gap-12 p-5">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-shadow text-center md:text-start font-['Space_Grotesk']"
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Get In Touch
+          </motion.h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Contact Form */}
+            <motion.article
+              className="glass-card p-8"
+              initial={prefersReducedMotion ? {} : { opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-2xl font-bold mb-6 font-['Space_Grotesk']">Send a Message</h3>
+              <form className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="senderEmail" className="text-gray-300 font-medium">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="senderEmail"
+                    placeholder="you@example.com"
+                    className="bg-black/30 text-white rounded-xl p-4 border border-[var(--glass-border)] focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 transition-all duration-300 placeholder:text-gray-500"
+                  />
                 </div>
 
-                <div className="flex flex-col gap-5 text-lg">
-                  <label htmlFor="senderComment">Enter your comment </label>
-                  <textarea type="text" id="senderComment" className="bg-white text-black rounded-lg p-2 focus:outline-green-500 border-none font-semibold"/>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="senderComment" className="text-gray-300 font-medium">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="senderComment"
+                    rows={5}
+                    placeholder="Hello! I'd like to discuss..."
+                    className="bg-black/30 text-white rounded-xl p-4 border border-[var(--glass-border)] focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 transition-all duration-300 resize-none placeholder:text-gray-500"
+                  />
                 </div>
 
-                <div className="flex w-full justify-center items-center">
-                  <button type="submit" className="text-lg font-bold p-3 hover:bg-green-500 bg-green-600 rounded-lg w-full cursor-pointer">Submit</button>
-                </div>
+                <motion.button
+                  type="submit"
+                  className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all duration-300 cursor-pointer"
+                  whileHover={prefersReducedMotion ? {} : { scale: 1.02, boxShadow: "0 0 30px rgba(13, 202, 13, 0.4)" }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Send Message
+                </motion.button>
               </form>
-            </div>
-          </article>
+            </motion.article>
 
-          <article className="p-5 shadow-lg shadow-green-500 rounded-lg flex flex-col gap-10">
-            <h1 className="text-3xl text-shadow font-bold w-full text-center md:text-start">Personal Account</h1>
-            <ul className="flex flex-col gap-10 p-5 shadow-lg shadow-green-500 rounded-lg">
-              {contacts.map((contactInfo, index) => (
-                <PersonalAccount
-                  accountName={contactInfo.accName}
-                  links={contactInfo.links}
-                  btnLabel={contactInfo.btnLabel}
-                  key={index}
-                />
-              ))}
-            </ul>
-          </article>
+            {/* Social Links */}
+            <motion.article
+              className="flex flex-col gap-6"
+              initial={prefersReducedMotion ? {} : { opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-2xl font-bold font-['Space_Grotesk']">Connect With Me</h3>
+              <p className="text-gray-400">
+                Feel free to reach out through any of these platforms. I'm always open to discussing new projects and opportunities.
+              </p>
+              
+              <div className="flex flex-col gap-4">
+                {socialLinks.map((social, index) => (
+                  <SocialCard key={social.name} social={social} index={index} />
+                ))}
+              </div>
+            </motion.article>
+          </div>
         </section>
       </div>
-    </>
-  )
+    </div>
+  );
 }
