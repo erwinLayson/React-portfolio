@@ -63,7 +63,7 @@ export function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div id="home" className="relative min-h-screen w-full bg-[var(--primary)] flex flex-col items-center justify-center overflow-hidden">
+      <div id="home" className="relative min-h-screen w-full bg-[var(--primary)] flex flex-col items-center justify-center overflow-hidden mt-10">
         {/* Particles Background */}
         {!prefersReducedMotion && (
           <Particles
