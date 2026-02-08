@@ -110,7 +110,7 @@ export function Navbar() {
             <NavLink
               key={index}
               link={data.route}
-              duration={800}
+              duration={0}
               Label={data.label}
             />
           ))}
