@@ -1,4 +1,4 @@
-import {osas, lostAndFound } from "../assets/index";
+import {osas, lostAndFound, p2pBus } from "../assets/index";
 
 export const Projects = [
   {
@@ -15,6 +15,13 @@ export const Projects = [
     description: `I developed a frontend-only Lost and Found Management System designed for school requirements. The platform allows users to post, view, and manage lost or found items through an interactive web interface. The system was built using HTML, CSS, and JavaScript only, with LocalStorage used to store and retrieve item data locally within the browser. This project does not use a backend server, database, or authentication system, and all data is stored temporarily on the user’s device. The system was created strictly for academic purposes, to demonstrate core web development concepts such as DOM manipulation, client-side data handling, and responsive UI design. It is not intended for real-world or production use.`,
     codeLink: "https://github.com/erwinLayson/lostAndFoundPlatform",
     siteLink: "https://erwinlayson.github.io/lostAndFoundPlatform/"
+  },
+  {
+    projectTitle: "P2P Bus tracking System",
+    image: p2pBus,
+    description: `Developed a full-stack P2P Bus Tracking System using React, Node.js, Express.js, and MongoDB to track buses in real time. Implemented RESTful APIs, JWT-based authentication, and Socket.io for secure and real-time communication. Integrated OpenStreetMap and external APIs for accurate bus location and provincial data.`,
+    codeLink: "https://github.com/erwinLayson/P2P-bus-tracking-System",
+    siteLink: "https://erwinlayson.github.io/P2P-bus-tracking-system-client-side/"
   },
 
 ]
