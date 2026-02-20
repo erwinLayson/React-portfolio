@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
-import { AboutMeContent, SkillSummary } from "../components/pages/About";
+import { AboutMeContent } from "../components/pages/About";
+import { SkillSummary } from "../components/SkillsSummary";
 import { Languages } from "../components/pages/Languages";
 import { Timeline } from "../components/pages/Timeline";
 import { Project } from "../components/pages/Projects";
