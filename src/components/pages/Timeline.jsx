@@ -8,6 +8,7 @@ import { useReducedMotion } from '../../hooks/useReducedMotion';
 // Components
 import TimeLineCard from '../TimeLineCard';
 import TimelineItem from '../TimelineItem';
+import ContentHeader from '../shared/ContentHeader';
 
 export function Timeline() {
   const prefersReducedMotion = useReducedMotion();
@@ -22,15 +23,10 @@ export function Timeline() {
 
   return (
     <section className="py-20 px-4 md:px-10">
-      <motion.h2 
-        className="text-3xl md:text-4xl font-bold text-shadow text-center mb-16 font-['Space_Grotesk']"
-        initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        Experience & Education
-      </motion.h2>
+      <ContentHeader
+        label={'Experience & Education'}
+        prefersReducedMotion={prefersReducedMotion}
+      />
 
       <div className="relative max-w-5xl mx-auto">
         {/* Vertical line */}

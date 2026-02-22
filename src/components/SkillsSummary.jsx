@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { skills } from "../data/skillsData";
 import { useReducedMotion } from "../hooks/useReducedMotion";
+
 import SkillCategory from "./SkillCategory";
 
 export function SkillSummary() {

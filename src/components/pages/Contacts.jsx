@@ -1,30 +1,7 @@
 import { motion } from "framer-motion";
-import { FaFacebook, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://www.facebook.com/warsak.busdak",
-    color: "from-blue-600 to-blue-400",
-    hoverColor: "hover:border-blue-500/50",
-  },
-  {
-    name: "Gmail",
-    icon: FaEnvelope,
-    link: "mailto:lasyonerwin28@gmail.com",
-    color: "from-red-500 to-orange-400",
-    hoverColor: "hover:border-red-500/50",
-  },
-  {
-    name: "GitHub",
-    icon: FaGithub,
-    link: "https://github.com/erwinLayson",
-    color: "from-gray-600 to-gray-400",
-    hoverColor: "hover:border-gray-400/50",
-  },
-];
+import { socialLinks } from "../../data/contactData";
 
 function SocialCard({ social, index }) {
   const prefersReducedMotion = useReducedMotion();

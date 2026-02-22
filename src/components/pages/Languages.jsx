@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
-import { SiHtml5, SiJavascript, SiPhp, SiCss3, SiNodedotjs } from "react-icons/si";
+import {  SiJavascript, } from "react-icons/si";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
-const languages = [
-  { icon: SiPhp, name: "PHP", color: "#777BB4" },
-  { icon: SiHtml5, name: "HTML", color: "#E34F26" },
-  { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-  { icon: SiCss3, name: "CSS", color: "#1572B6" },
-  { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
-];
+import {languages} from '../../data/languageData';
+import Article from "../shared/Article";
 
 function LanguageItem({ language, index }) {
   const prefersReducedMotion = useReducedMotion();
@@ -54,29 +49,31 @@ export function Languages() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Languages List */}
-        <motion.article
+        <Article
           className="glass-card p-8"
           initial={prefersReducedMotion ? {} : { opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-        >
-          <ul className="list-none flex flex-col gap-3">
-            {languages.map((language, index) => (
-              <LanguageItem key={language.name} language={language} index={index} />
-            ))}
-          </ul>
-        </motion.article>
+          children={
+            <ul className="list-none flex flex-col gap-3">
+              {languages.map((language, index) => (
+                <LanguageItem key={language.name} language={language} index={index} />
+              ))}
+            </ul>
+          }
+        />
 
         {/* Main Tech Highlight */}
-        <motion.article
+        <Article
           className="glass-card p-8 flex flex-col gap-6 justify-center"
           initial={prefersReducedMotion ? {} : { opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-shadow font-['Space_Grotesk']">
+          children={
+            <>
+              <h3 className="text-2xl md:text-3xl font-bold text-shadow font-['Space_Grotesk']">
             Main Tech
           </h3>
           
@@ -103,7 +100,10 @@ export function Languages() {
           <p className="text-gray-400 text-sm leading-relaxed">
             JavaScript powers both my frontend and backend development, enabling me to build full-stack applications with a unified language ecosystem.
           </p>
-        </motion.article>
+            </>
+          }
+        />
+        
       </div>
     </>
   );
